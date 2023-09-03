@@ -5,7 +5,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 # Download the VADER lexicon if you haven't already
 # nltk.download('vader_lexicon')
 
-# Create an instance of the VADER sentiment analyzer
+# Create a class of the VADER sentiment analyzer
 class SentimentAnalyzer:
     analyzer = SentimentIntensityAnalyzer()
     emotion_mapping = {
@@ -15,18 +15,12 @@ class SentimentAnalyzer:
                     "neu": 'neutral'
                 }
 
-# Example poem text
-poem = """
-I'm alive yet I feel empty
-My soul spent so much time unready
-I have heart and I have smiles
-But lost in my own private aisles
-I'm happy yet I feel sad
-Emotions running good and bad
-My life is filled with much delight
-But there are days I don't feel quite right
-"""
 class OpenAIConfig:
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     OPENAI_MODEL = "text-davinci-003"
-    POEM_MAX_TOKENS = 100
+    POEM_MAX_TOKENS = 200
+
+# Example poem text
+example_poem = """
+\n\nNo more joy, no more cheer \nI've lost the spark that brought me here \nIt's been so long since I've been able to care \nThose days of happiness I can't repair \n\nMy spirit is waning, my heart still so hollow \nI can hardly remember why I used to follow \nThis cloud of heaviness it won't let me go\nI can barely see in front of me as the darkness grows \n\nA sadness sets in, I can no longer pretend \nLike a storm that's taking away a life I can't mend \nThe emptiness remains and I know it's not fair \nThat I can't feel happy anymore anywhere.
+"""

@@ -4,7 +4,7 @@ load_dotenv()
 
 from flask import Flask, render_template
 from flask_cors import CORS
-from socket_conn.clients import socketio
+from socket_connections.clients import socketio
 from api import routes
 from views import logics
 
