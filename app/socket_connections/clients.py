@@ -19,8 +19,8 @@ def generate_poem(data):
     try:
         if logics.validate_request(data) == "invalid":
             raise InvalidRequestException
-        # response = logics.generate_ai_poem(data["prompt"])
-        response = example_poem
+        response = logics.generate_ai_poem(data["prompt"])
+        # response = example_poem
         if response == "error":
             raise APIConnectionException
         for token in response.split("\n"):
