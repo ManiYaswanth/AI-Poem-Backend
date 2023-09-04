@@ -3,7 +3,7 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # Download the VADER lexicon if you haven't already
-# nltk.download('vader_lexicon')
+nltk.download('vader_lexicon')
 
 # Create a class of the VADER sentiment analyzer
 class SentimentAnalyzer:
