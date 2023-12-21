@@ -17,15 +17,17 @@ def generate_poem(data):
             webscocket emission of generated poem stream and emotion analysis
     '''
     try:
+        print(f"\n{data = }\n")
         if logics.validate_request(data) == "invalid":
             raise InvalidRequestException
         response = logics.generate_ai_poem(data["prompt"])
         # response = example_poem
+        print(f"\n{response = }\n")
         if response == "error":
             raise APIConnectionException
         for token in response.split("\n"):
             emit('poem_token', {'token': token}, room=request.sid)
-            time.sleep(0.1)
+            time.sleep(0.2)
         try:
             emotion_analysis = logics.analyze_emotion(response)
             emit('emotion_analysis', {"emotions": emotion_analysis}, room = request.sid)
